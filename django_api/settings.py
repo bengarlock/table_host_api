@@ -32,8 +32,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'yoda',
     'bengarlock.com',
-    '0.0.0.0',
-    'localhost:63342',
+    'www.bengarlock.com',
 ]
 
 
