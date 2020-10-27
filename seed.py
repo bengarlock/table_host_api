@@ -35,7 +35,9 @@ def create_slots(book_id):
             "party_size": 10,
             "status": '',
             "tables": [],
-            "book_id": book_id,
+            "book_id": {
+                "book_id": book_id
+            }
         }
         requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
 
