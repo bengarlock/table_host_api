@@ -7,8 +7,8 @@ class Slot(models.Model):
     time = models.TextField(default="5:00 PM")
     party_size = models.IntegerField(default=0)
     status = models.TextField(blank=True)
-    tables = ArrayField(models.CharField(max_length=15), default=[], blank=True)
-    book_id = models.ForeignKey(Book, related_name="slots", on_delete=models.SET_NULL, required=False)
+    tables = ArrayField(models.CharField(max_length=15), default=list, blank=True)
+    book_id = models.ForeignKey(Book, related_name="slots", on_delete=models.SET_DEFAULT, default=5)
 
 
 
