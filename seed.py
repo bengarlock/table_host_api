@@ -17,21 +17,26 @@ times = [
 
 
 
+obj = {
+    "booked": False,
+    "time": "7:00 PM",
+    "party_size": 2,
+    "status": '',
+    "tables": []
+}
+
+slot = requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
+
+with open('errors.html', 'w', encoding='utf-8') as file:
+    file.write(str(slot.content))
+
+
+
 # EndDate = today + timedelta(days=0)
 #
-# obj = {
-#     "date": EndDate,
-#     "restaurant_id": 1,
-#     "slots": [],
-# }
+#
 #
 # url = "http://www.bengarlock.com:8080/books/"
 #
 # post = requests.post(url, data=obj)
 # print(post.content)
-
-
-# index = -1000
-# while index <= 100:
-
-#     index += 1
