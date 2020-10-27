@@ -1,7 +1,11 @@
 from rest_framework import serializers
 from .models import Book
+from slots.serializers import SlotSerializer
+
 
 class BookSerializer(serializers.ModelSerializer):
+    slots = SlotSerializer(many=True)
+
     class Meta:
         model = Book
-        fields = ('id', 'date', 'restaurant_id')
+        fields = '__all__'
