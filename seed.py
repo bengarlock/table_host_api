@@ -5,6 +5,20 @@ import json
 today = date.today()
 books = []
 
+
+obj = {
+    "first_name": '',
+    "last_name": '',
+    "phone_number": '',
+    "guest_notes": '',
+    "root_user": True,
+}
+
+guest = requests.post("http://www.bengarlock.com:8080/guests/", obj)
+
+
+
+
 def create_books(date_cap):
     index = 0
     while index <= date_cap:
@@ -36,7 +50,7 @@ def create_slots(book_id):
             "party_size": 10,
             "status": '',
             "tables": [],
-            "book_id": book_id
+            "book": book_id
         }
         requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
 
