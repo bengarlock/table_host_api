@@ -21,6 +21,7 @@ def create_books(date_cap):
         index += 1
 
 def create_slots(book_id):
+    print(book_id)
     times = [
         '5:00 PM', '5:15 PM', '5:30 PM', '5:45 PM',
         '6:00 PM', '6:15 PM', '6:30 PM', '6:45 PM',
@@ -35,9 +36,7 @@ def create_slots(book_id):
             "party_size": 10,
             "status": '',
             "tables": [],
-            "book_id": {
-                "book_id": book_id
-            }
+            "book_id": book_id
         }
         requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
 
