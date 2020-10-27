@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'slots',
     'restaurants',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
