@@ -8,7 +8,7 @@ class Slot(models.Model):
     party_size = models.IntegerField(default=0)
     status = models.TextField(blank=True)
     tables = ArrayField(models.CharField(max_length=15), default=[], blank=True)
-    book_id = models.ForeignKey(Book, related_name="slots", on_delete=models.SET_NULL)
+    book_id = models.ForeignKey(Book, related_name="slots", on_delete=models.SET_NULL, null=True)
 
 
 
