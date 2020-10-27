@@ -8,7 +8,7 @@ today = date.today()
 print(url)
 
 
-get = requests.get('http://127.0.0.1:8000/books/')
+get = requests.get('http://www.bengarlock.com:8080/books/?date=2020-10-26')
 for item in get:
     print(get.json())
 

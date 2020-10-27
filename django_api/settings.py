@@ -73,8 +73,11 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1',
     'http://bengarlock.com',
     'http://www.bengarlock.com',
-    'http://localhost:3000',
+    'http://localhost:8000',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 ROOT_URLCONF = 'django_api.urls'
 

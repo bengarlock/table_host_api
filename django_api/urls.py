@@ -3,7 +3,7 @@ from books.views import BookView
 from guests.views import GuestView
 from slots.views import SlotView
 from django.contrib import admin
-from django.conf.urls import include, url
+from django.conf.urls import url
 
 router = routers.SimpleRouter()
 

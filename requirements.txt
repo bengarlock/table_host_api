@@ -18,3 +18,4 @@ views==0.3
 virtualenv==20.0.16
 virtualenv-clone==0.5.4
 django-cors-headers
+django-filter
