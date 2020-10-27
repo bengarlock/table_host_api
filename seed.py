@@ -42,10 +42,13 @@ def create_slots(book_id):
             "party_size": 2,
             "status": '',
             "tables": [],
-            "book_id": 1,
+            "book_id_id": book_id,
         }
 
         slot = requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
+        with open("errors.html", 'w', encoding='utf-8') as file:
+            file.write(str(slot.content))
+
 
 create_books(10)
 
