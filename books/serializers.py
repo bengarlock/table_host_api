@@ -4,7 +4,7 @@ from slots.serializers import SlotSerializer
 
 
 class BookSerializer(serializers.ModelSerializer):
-    slots = SlotSerializer(many=True)
+    slots = SlotSerializer(many=True, required=False)
 
     class Meta:
         model = Book

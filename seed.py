@@ -1,12 +1,9 @@
 import requests
 from datetime import timedelta, date
 
-url = "http://www.bengarlock.com:8080/books/"
+
 
 today = date.today()
-
-print(url)
-
 
 get = requests.get('http://www.bengarlock.com:8080/books/?date=2020-10-26')
 for item in get:
@@ -18,14 +15,13 @@ EndDate = today + timedelta(days=0)
 obj = {
     "date": EndDate,
     "restaurant_id": 1,
-    "booked": False,
+    "slots": [],
 }
 
+url = "http://www.bengarlock.com:8080/books/"
+
 post = requests.post(url, data=obj)
-print(post)
-
-
-
+print(post.content)
 
 
 # index = -1000
