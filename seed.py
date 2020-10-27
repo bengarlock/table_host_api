@@ -6,7 +6,7 @@ today = date.today()
 books = []
 
 def create_books(date_cap):
-    index = 0
+    index = -100
     while index <= date_cap:
         date = today + timedelta(days=index)
         obj = {
@@ -40,7 +40,7 @@ def create_slots(book_id):
         }
         requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
 
-create_books(10)
+create_books(1000)
 
 for book_id in books:
     create_slots(book_id)
