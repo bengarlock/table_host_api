@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'restaurants',
     'corsheaders',
     'django_filters',
+    'faker'
 ]
 
 MIDDLEWARE = [
