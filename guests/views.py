@@ -7,4 +7,5 @@ import django_filters.rest_framework
 class GuestView(viewsets.ModelViewSet):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
-    filterset_fields = ['first_name', 'last_name']
+
+    filterset_fields = ["first_name"]
