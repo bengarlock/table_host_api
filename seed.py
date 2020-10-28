@@ -39,8 +39,8 @@ def create_books(date_cap):
 
 
 def create_slots(array):
+    print(array)
     for book_id in array:
-        print(book_id)
         times = [
             '5:00 PM', '5:15 PM', '5:30 PM', '5:45 PM',
             '6:00 PM', '6:15 PM', '6:30 PM', '6:45 PM',
@@ -57,7 +57,9 @@ def create_slots(array):
                     "party_size": party_size,
                     "status": '',
                     "tables": [],
-                    "book": book_id
+                    "book": {
+                        "id": book_id,
+                    }
                 }
                 requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
 
@@ -94,14 +96,14 @@ def create_guests(data_cap):
         }
 
         guest = requests.post('http://www.bengarlock.com:8080/guests/', data=obj)
-        print(guest.content)
+        # print(guest.content)
         index += 1
 
 
 
 
 
-# create_root_user()
-# create_books(10)
-# create_slots(array=books)
+create_root_user()
+create_books(10)
+create_slots(array=books)
 create_guests(100)
