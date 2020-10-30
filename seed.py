@@ -4,8 +4,8 @@ import json
 from faker import Faker
 import random
 
-#url = "http://127.0.0.1:8000/"
-url = "http://www.bengarlock.com:8080/"
+url = "http://127.0.0.1:8000/"
+#url = "http://www.bengarlock.com:8080/"
 
 today = date.today()
 books = []
