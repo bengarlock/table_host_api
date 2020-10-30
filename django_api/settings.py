@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'books',
     'guests',
     'slots',
+    'tables',
     'restaurants',
     'corsheaders',
     'django_filters',
