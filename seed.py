@@ -65,9 +65,7 @@ def create_slots(array):
 
 
 def create_guests(data_cap):
-
     index = 0
-
     while index < data_cap:
         notes_array = [
             "Likes Expensive wine.",
@@ -99,8 +97,14 @@ def create_guests(data_cap):
         # print(guest.content)
         index += 1
 
+def create_tables():
+    table1 = {"class_name": "two-top-horizontal", "position_left": "102px", "position_top": "40px", "name": "1", "restaurant_id": 1}
+    requests.post(url + "tables/", data=table1)
 
-create_root_user()
-create_books(10)
-create_slots(array=books)
-create_guests(100)
+
+
+# create_root_user()
+# create_books(10)
+# create_slots(array=books)
+# create_guests(100)
+create_tables()
