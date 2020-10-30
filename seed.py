@@ -4,6 +4,7 @@ import json
 from faker import Faker
 import random
 
+url = "http://127.0.0.1:8000/"
 
 
 today = date.today()
@@ -18,7 +19,7 @@ def create_root_user():
         "guest_notes": '',
         "root_user": True,
     }
-    guest = requests.post("http://www.bengarlock.com:8080/guests/", obj)
+    guest = requests.post(url + "guests/", obj)
     print(guest.content)
 
 
@@ -31,7 +32,7 @@ def create_books(date_cap):
             "restaurant_id": 1,
             "slots": [],
         }
-        book = requests.post(url="http://www.bengarlock.com:8080/books/", data=obj)
+        book = requests.post(url = url + "books/", data=obj)
         r = book.content.decode('UTF-8')
         res = json.loads(r)
         books.append(res["id"])
@@ -60,7 +61,7 @@ def create_slots(array):
                     "tables": [],
                     "book": book_id
                 }
-                requests.post('http://www.bengarlock.com:8080/slots/', data=obj)
+                requests.post(url + "slots/", data=obj)
 
 
 def create_guests(data_cap):
@@ -94,12 +95,9 @@ def create_guests(data_cap):
             "root_user": False,
         }
 
-        guest = requests.post('http://www.bengarlock.com:8080/guests/', data=obj)
+        guest = requests.post(url + "guests/", data=obj)
         # print(guest.content)
         index += 1
-
-
-
 
 
 create_root_user()
