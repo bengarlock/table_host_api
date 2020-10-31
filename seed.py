@@ -4,8 +4,8 @@ import json
 from faker import Faker
 import random
 
-url = "http://127.0.0.1:8000/"
-#url = "http://www.bengarlock.com:8080/"
+#url = "http://127.0.0.1:8000/"
+url = "http://www.bengarlock.com:8080/"
 
 today = date.today()
 books = []
@@ -98,13 +98,45 @@ def create_guests(data_cap):
         index += 1
 
 def create_tables():
-    table1 = {"class_name": "two-top-horizontal", "position_left": "102px", "position_top": "40px", "name": "1", "restaurant_id": 1}
-    requests.post(url + "tables/", data=table1)
+
+    tables = [
+
+        {"class_name": "two-top-horizontal", "position_left": "102px", "position_top": "40px", "name": "1", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "168px", "position_top": "40px", "name": "2", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "234px", "position_top": "40px", "name": "3", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "300px", "position_top": "40px", "name": "4", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "364px", "position_top": "40px", "name": "5", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "430px", "position_top": "40px", "name": "6", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "120px", "name": "7", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "180px", "name": "8", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "240px", "name": "9", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "300px", "name": "10", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "360px", "name": "11", "restaurant_id": 1},
+        {"class_name": "two-top-horizontal", "position_left": "40px", "position_top": "420px", "name": "12", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "140px", "position_top": "150px", "name": "14", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "210px", "position_top": "150px", "name": "15", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "280px", "position_top": "150px", "name": "16", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "350px", "position_top": "150px", "name": "17", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "420px", "position_top": "150px", "name": "18", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "140px", "position_top": "250px", "name": "19", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "210px", "position_top": "250px", "name": "20", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "280px", "position_top": "250px", "name": "21", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "350px", "position_top": "250px", "name": "22", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "420px", "position_top": "250px", "name": "23", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "140px", "position_top": "350px", "name": "24", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "210px", "position_top": "350px", "name": "25", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "280px", "position_top": "350px", "name": "26", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "350px", "position_top": "350px", "name": "27", "restaurant_id": 1},
+        {"class_name": "fourTop", "position_left": "420px", "position_top": "350px", "name": "28", "restaurant_id": 1},
+    ]
+
+    for table in tables:
+        table = requests.post(url + "tables/", data=table)
+        print(table.content)
 
 
-
-# create_root_user()
-# create_books(10)
-# create_slots(array=books)
-# create_guests(100)
+create_root_user()
+create_books(10)
+create_slots(array=books)
+create_guests(100)
 create_tables()

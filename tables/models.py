@@ -7,7 +7,7 @@ class Table(models.Model):
     position_top = models.TextField(default="0px")
     name = models.TextField(default="1")
     restaurant_id = models.IntegerField(default=1)
-    status = models.TextField(blank=True)
+    status = models.TextField(default='done')
     reservation_id = models.IntegerField(default=0)
 
 
