@@ -8,6 +8,5 @@ class Table(models.Model):
     name = models.TextField(default="1")
     restaurant_id = models.IntegerField(default=1)
     status = models.TextField(default='done')
-    reservation_id = models.IntegerField(default=0)
 
 
