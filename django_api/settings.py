@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     'yoda',
     'bengarlock.com',
     'www.bengarlock.com',
+    'http://localhost:3000'
 ]
 
 
@@ -76,6 +77,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://bengarlock.com',
     'http://www.bengarlock.com',
     'http://localhost:8000',
+    'http://localhost:3000',
+    'http://bengarlock.com:6320,'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
