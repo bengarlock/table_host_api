@@ -11,7 +11,15 @@ class Slot(models.Model):
     reservation_notes = models.TextField(blank=True)
     tables = ArrayField(models.CharField(max_length=15), default=list, blank=True)
     book = models.ForeignKey(Book, related_name="slots", on_delete=models.SET_DEFAULT, default=1)
-    guest = models.ForeignKey(Guest, related_name="guest", on_delete=models.SET_DEFAULT, default=1)
+    guest = models.ForeignKey(Guest, related_name="slots", on_delete=models.SET_DEFAULT, default=1)
+
+    # class Meta:
+    #     ordering = ["time", "party_size"]
+    #
+    # def __str__(self):
+    #     return '%s: %s' % (self.time, self.party_size )
+
+
 
 
 
