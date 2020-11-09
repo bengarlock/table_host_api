@@ -19,7 +19,6 @@ class SlotSerializer(serializers.ModelSerializer):
 
 class BookSerializer(serializers.ModelSerializer):
     slots = SlotSerializer(many=True, required=False)
-
     class Meta:
         model = Book
         fields = '__all__'

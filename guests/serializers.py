@@ -12,10 +12,10 @@ class SlotSerializer(serializers.ModelSerializer):
         depth = 1
 
 class GuestSerializer(serializers.ModelSerializer):
-    slots = SlotSerializer(many=True)
+    #slots = SlotSerializer(many=True)
     class Meta:
         model = Guest
-        fields = ['id', 'first_name', 'last_name', 'phone_number', 'guest_notes', 'root_user', 'slots']
+        fields = ['id', 'first_name', 'last_name', 'phone_number', 'guest_notes', 'root_user']
 
     def update(self, instance, validated_data):
         phone_number = instance.phone_number
