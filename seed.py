@@ -23,6 +23,13 @@ def create_root_user():
     }
     requests.post(url + "guests/", obj)
 
+def create_restaurant():
+    print("Creating Restaurant...")
+    obj = {
+        "name": 'ilili',
+    }
+    requests.post(url + "restaurants/", obj)
+
 
 def create_books(date_cap):
     print("Creating Books...")
@@ -184,9 +191,10 @@ def create_reservations(limit):
         index += 1
 
 
-create_books(100)
-create_root_user()
-create_slots(array=books)
-create_guests(1000)
-create_tables()
-create_reservations(limit=1000)
+# create_books(100)
+# create_root_user()
+# create_restaurant()
+# create_slots(array=books)
+# create_guests(1000)
+# create_tables()
+# create_reservations(limit=1000)
