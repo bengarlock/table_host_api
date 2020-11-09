@@ -12,6 +12,7 @@ books = []
 
 
 def create_root_user():
+    print("Creating Root User...")
     obj = {
         "first_name": '',
         "last_name": '',
@@ -20,12 +21,12 @@ def create_root_user():
         "root_user": True,
         "slot": '1',
     }
-    guest = requests.post(url + "guests/", obj)
-    print(guest.content)
+    requests.post(url + "guests/", obj)
 
 
 def create_books(date_cap):
-    index = 0
+    print("Creating Books...")
+    index = date_cap * -1
     while index <= date_cap:
         date = today + timedelta(days=index)
         obj = {
@@ -41,7 +42,7 @@ def create_books(date_cap):
 
 
 def create_slots(array):
-    print(array)
+    print("Creating Slots...")
     for book_id in array:
         print(book_id)
         times = [
@@ -68,6 +69,7 @@ def create_slots(array):
 
 
 def create_guests(data_cap):
+    print("Creating Guest Records...")
     index = 0
     while index < data_cap:
         notes_array = [
@@ -102,6 +104,7 @@ def create_guests(data_cap):
 
 
 def create_tables():
+    print("Creating Tables...")
     tables = [
 
         {"class_name": "two-top-horizontal", "position_left": "102px", "position_top": "40px", "name": "1",
@@ -163,9 +166,27 @@ def create_tables():
         table = requests.post(url + "tables/", data=table)
         print(table.content)
 
+def create_reservations(limit):
+    print("Booking Reservations...")
+    index = 0
+    while index < limit:
+        slot_id = random.randint(1, 7000)
+        guest_id = random.randint(1, 1000)
 
+        obj = {
+                  "booked": True,
+                  "status": "booked",
+                  "guest": int(guest_id)
+              }
+
+        updated_slot = requests.put(url + "slots/" + str(slot_id) + "/", data=obj)
+        print(url + "slots/" + str(slot_id))
+        index += 1
+
+
+create_books(100)
 create_root_user()
-# create_books(100)
-# create_slots(array=books)
-# create_guests(1000)
-# create_tables()
+create_slots(array=books)
+create_guests(1000)
+create_tables()
+create_reservations(limit=1000)

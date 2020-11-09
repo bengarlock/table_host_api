@@ -10,3 +10,6 @@ from restaurants.models import Restaurant
 #     slot=[]
 # )
 
+root_restaurant = Restaurant.objects.create(
+    name='ilili',
+)
