@@ -51,7 +51,6 @@ def create_books(date_cap):
 def create_slots(array):
     print("Creating Slots...")
     for book_id in array:
-        print(book_id)
         times = [
             '5:00 PM', '5:15 PM', '5:30 PM', '5:45 PM',
             '6:00 PM', '6:15 PM', '6:30 PM', '6:45 PM',
@@ -191,10 +190,10 @@ def create_reservations(limit):
         index += 1
 
 
-# create_books(100)
-# create_root_user()
-# create_restaurant()
-# create_slots(array=books)
-# create_guests(1000)
-# create_tables()
-# create_reservations(limit=1000)
+create_books(100)
+create_root_user()
+create_restaurant()
+create_slots(array=books)
+create_guests(1000)
+create_tables()
+create_reservations(limit=1000)
