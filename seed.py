@@ -18,6 +18,7 @@ def create_root_user():
         "phone_number": '',
         "guest_notes": '',
         "root_user": True,
+        "slots": [],
     }
     guest = requests.post(url + "guests/", obj)
     print(guest.content)
@@ -58,8 +59,10 @@ def create_slots(array):
                     "time": time,
                     "party_size": party_size,
                     "status": '',
+                    "reservation_notes"
                     "tables": [],
-                    "book": book_id
+                    "book": book_id,
+                    "guest": 1
                 }
                 requests.post(url + "slots/", data=obj)
 
@@ -94,7 +97,7 @@ def create_guests(data_cap):
         }
 
         guest = requests.post(url + "guests/", data=obj)
-        # print(guest.content)
+        print(guest.content)
         index += 1
 
 
@@ -162,7 +165,7 @@ def create_tables():
 
 
 create_root_user()
-create_books(10)
+create_books(100)
 create_slots(array=books)
-create_guests(100)
+create_guests(1000)
 create_tables()
