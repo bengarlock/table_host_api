@@ -165,7 +165,7 @@ def create_tables():
 
 
 create_root_user()
-create_books(100)
-create_slots(array=books)
-create_guests(1000)
-create_tables()
+# create_books(100)
+# create_slots(array=books)
+# create_guests(1000)
+# create_tables()
