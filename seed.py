@@ -18,7 +18,7 @@ def create_root_user():
         "phone_number": '',
         "guest_notes": '',
         "root_user": True,
-        "slots": [],
+        "slot": [],
     }
     guest = requests.post(url + "guests/", obj)
     print(guest.content)
