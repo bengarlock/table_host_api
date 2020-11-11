@@ -4,9 +4,8 @@ import json
 from faker import Faker
 import random
 
-# url = "http://127.0.0.1:8000/"
-url = "http://www.bengarlock.com:8080/"
-
+url = "http://127.0.0.1:8000/"
+#url = "http://www.bengarlock.com:8080/"
 today = date.today()
 books = []
 
@@ -23,6 +22,7 @@ def create_root_user():
     }
     requests.post(url + "guests/", obj)
 
+
 def create_restaurant():
     print("Creating Restaurant...")
     obj = {
@@ -33,9 +33,10 @@ def create_restaurant():
 
 def create_books(date_cap):
     print("Creating Books...")
-    index = date_cap * -1
+    index = 0
     while index <= date_cap:
         date = today + timedelta(days=index)
+        print(date)
         obj = {
             "date": date,
             "restaurant_id": 1,
@@ -112,7 +113,6 @@ def create_guests(data_cap):
 def create_tables():
     print("Creating Tables...")
     tables = [
-
         {"class_name": "two-top-horizontal", "position_left": "102px", "position_top": "40px", "name": "1",
          "restaurant_id": 1, "status": "done"},
         {"class_name": "two-top-horizontal", "position_left": "168px", "position_top": "40px", "name": "2",
@@ -172,6 +172,7 @@ def create_tables():
         table = requests.post(url + "tables/", data=table)
         print(table.content)
 
+
 def create_reservations(limit):
     print("Booking Reservations...")
     index = 0
@@ -180,10 +181,10 @@ def create_reservations(limit):
         guest_id = random.randint(1, 1000)
 
         obj = {
-                  "booked": True,
-                  "status": "booked",
-                  "guest": int(guest_id)
-              }
+            "booked": True,
+            "status": "booked",
+            "guest": int(guest_id)
+        }
 
         updated_slot = requests.put(url + "slots/" + str(slot_id) + "/", data=obj)
         print(url + "slots/" + str(slot_id))
@@ -196,4 +197,4 @@ create_restaurant()
 create_slots(array=books)
 create_guests(1000)
 create_tables()
-create_reservations(limit=1000)
+create_reservations(limit=2000)

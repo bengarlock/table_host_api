@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import corsheaders
+from passwords import return_db_password, return_secret_key
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kvii(44mua(enoyd4_dj66qqzfo$11=(np4jp^598gdbkzs1v#'
+SECRET_KEY = return_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -112,17 +114,11 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 DATABASES = {
 
     'default': {
-
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
         'NAME': 'postgres',
-
         'USER': 'postgres',
-
-        'PASSWORD': 'chocolate100X',
-
+        'PASSWORD': return_db_password(),
         'HOST': '127.0.0.1',
-
         'PORT': '5433',
     }
 }
